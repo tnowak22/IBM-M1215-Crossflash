@@ -40,9 +40,9 @@ First we need a DOS usb drive and an EFI usb drive. The process of making them i
 - Take note of the SAS Adress of you controller. It can be found on as sticker on the board. You'll need it later.
 - patience
 
-## Quick Note
+## Quick Notes
 
-Much of what I did was based on information I scavanged from other people's experiences flashing an IBM M1215 and LSI 93XX cards. There was no record of anyone attempting to flash the ASUS firmware to an OEM raid card, so I was in the dark. Oh and I recall seeing in some other guides that two pins on the raid card were jumpered before beginning the flashing process. The pins were on the J6 connector on the board. I did not do this, but it still worked. I don't have an explanantion.
+Much of what I did was based on information I scavanged from other people's experiences flashing an IBM M1215 and LSI 93XX cards. There was no record of anyone attempting to flash the ASUS firmware to an OEM raid card, so I was in the dark. With the OEM M1215 I was working with, `sas3flash.efi` would not recognize the card. From what I've read, it only recognizes LSI branded cards. Therefore, `megarec.exe` is required for the initial purging of the OEM configuration. Oh and I recall seeing in some other guides that two pins on the raid card were jumpered before beginning the flashing process. The pins were on the J6 connector on the board. I did not do this, but it still worked. I don't have an explanantion.
 
 ## The Process
 1. Boot into DOS. Make sure the megarec files are on the usb drive, including the `DOS4GW.EXE`
@@ -87,4 +87,30 @@ Much of what I did was based on information I scavanged from other people's expe
     sas3flash.efi -listall
     ```
 14. Congrats, you're done. `reset -s` to shutdown from the EFI shell.
-     
+
+## References
+
+Megarec download from HPE (valid Nov. 2024)
+   https://support.hpe.com/connect/s/softwaredetails?language=en_US&collectionId=MTX-63f4ca46c9424e7d&tab=releaseNotes
+   
+Information on flashing another IBM controller
+   http://www.penlug.org/FreeNasHardwareInfoIbmM1015.html
+   https://forums.freebsd.org/threads/flashing-my-m1015.52387/
+   https://www.truenas.com/community/threads/where-is-the-megarec-utility-to-crossflash-m1015-to-it-mode.25130/
+   https://www.truenas.com/community/threads/ibm-serveraid-m1015-and-no-lsi-sas-adapters-found.27445/
+   https://www.servethehome.com/flash-lsi-sas-3008-hba-e-g-ibm-m1215-mode/
+   
+Megarec Command Usage
+   https://forums.servethehome.com/index.php?threads/lsi-megacli-preboot-cli-storecli-megascu-megarec-sas2flash-and-megaoem-commands.457/
+
+Another user's experience flashing back to IR mode
+   https://forums.serverbuilds.net/t/flashing-sas2208-to-it-mode-when-sas2flsh-does-not-detect-it/2357
+
+Thorough Flashing Guide(s) for LSI Variants
+   https://www.truenas.com/community/resources/detailed-newcomers-guide-to-crossflashing-lsi-9211-9300-9305-9311-9400-94xx-hba-and-variants.54/
+   https://geeksunlimitedinc.wordpress.com/2017/02/16/flashing-lsi-hba-to-it-mode-or-ir-mode/
+   https://github.com/EverLand1/9300-8i_IT-Mode
+   https://github.com/lrq3000/lsi_sas_hba_crossflash_guide?tab=readme-ov-file
+
+LSI Raid Controller Listing and OEM Equivalents
+   https://forums.servethehome.com/index.php?threads/lsi-raid-controller-and-hba-complete-listing-plus-oem-models.599/
