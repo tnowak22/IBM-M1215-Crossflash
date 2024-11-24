@@ -50,44 +50,44 @@ Much of what I did was based on information I scavanged from other people's expe
    ```
    megarec -adplist
    ```
-4. Run the following commands with megarec. These will backup the current configuration, I think, which you can restore if needed. Now, the second command errored out on me. I ignored it and moved on.
+3. Run the following commands with megarec. These will backup the current configuration, I think, which you can restore if needed. Now, the second command errored out on me. I ignored it and moved on.
    ```
     megarec -readsbr origsbr.bin
    ```
    ```
    megarec -readspd origspd.bin
    ```
-5. Now we clear the current configuration.
+4. Now we clear the current configuration.
    ```
    megarec -writesbr 0 sbrempty.bin
    ```
    ```
    megarec -cleanflash 0
    ```
-6. Thats it, shut-er down.
-7. Boot into EFI. Include the firmware/ bios files on the same usb drive.
-8. `sas3flash.exe -list` should show the SAS3008 controller.
-9. Clear the current firmware
+5. Thats it, shut-er down.
+6. Boot into EFI. Include the firmware/ bios files on the same usb drive.
+7. `sas3flash.exe -list` should show the SAS3008 controller.
+8. Clear the current firmware
     ```
     sas3flash.efi -o -e 6
     ```
-10. Flashing the firmware.
+9. Flashing the firmware.
 
-** Note **  if you need to flash to another firmware, you're on your own. Good luck. But the steps would look like:
+   ** Note **  if you need to flash to another firmware, you're on your own. Good luck. But the steps would look like:
       ```
        sas3flash.efi -f 3008MCTP.fw # update the firmware
        sas3flash.efi -b mptsas3.rom # update the BIOS
        sas3flash.efi -b mpt3x64.rom # continue to update the BIOS
-     ```
-12. Finally, we need to reset the SAS Adress.
+      ```
+10. Finally, we need to reset the SAS Adress.
     ```
     sas3flash.efi -o -sasadd <Insert YOUR SAS Adress Here>
     ```
-13. Verify.
+11. Verify.
     ```
     sas3flash.efi -listall
     ```
-14. Congrats, you're done. `reset -s` to shutdown from the EFI shell.
+12. Congrats, you're done. `reset -s` to shutdown from the EFI shell.
 
 ## References
 
