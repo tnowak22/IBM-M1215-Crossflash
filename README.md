@@ -71,10 +71,9 @@ Much of what I did was based on information I scavanged from other people's expe
     ```
     sas3flash.efi -o -e 6
     ```
-10.
+10. Flashing the firmware.
 
-** Note **  if you need to flash to another firmware, you're on your own with that. Good luck. But the steps would look like:
-
+** Note **  if you need to flash to another firmware, you're on your own. Good luck. But the steps would look like:
       ```
        sas3flash.efi -f 3008MCTP.fw # update the firmware
        sas3flash.efi -b mptsas3.rom # update the BIOS
