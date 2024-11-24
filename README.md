@@ -36,9 +36,9 @@ First we need a DOS usb drive and an EFI usb drive. The process of making them i
 
 - megarec and the other file in that folder
 - sbrempty.bin
-- Firmware - ** Note ** - In this guide I am flashing the ASUS Firmware, which the latest version at the time of writing is 16.00.13. ASUS provides a support package with this firmware and the bios rom files. I would assume that this would also work for the LSI/Broadcom firmware for the 9300-8i series, which use the same 3008 raid on chip (roc).
+- Firmware - ** Note ** - In this guide I am flashing the ASUS Firmware, which the latest version at the time of writing is 16.00.13. ASUS provides a support package with this firmware and the bios rom files. I would assume that this would also work for the LSI/Broadcom firmware for the 9300-8i series, which use the same 3008 raid on chip (roc), but this I cannot confirm.
 - Take note of the SAS Adress of you controller. It can be found on as sticker on the board. You'll need it later.
-- patience
+- Patience
 
 ## Quick Notes
 
