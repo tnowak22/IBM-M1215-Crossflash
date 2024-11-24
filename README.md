@@ -36,7 +36,7 @@ First we need a DOS usb drive and an EFI usb drive. The process of making them i
 
 - megarec and the other file in that folder
 - sbrempty.bin
-- Firmware - ** Note ** - In this guide I am flashing the ASUS Firmware, which the latest version at the time of writing is 16.00.13. ASUS provides a support package with this firmware and the bios rom files. I would assume that this would also work for the LSI/Broadcom firmware for the 9300-8i series, which use the same 3008 raid on chip (roc), but this I cannot confirm.
+- Firmware - **Note** - In this guide I am flashing the ASUS Firmware, which the latest version at the time of writing is 16.00.13. ASUS provides a support package with this firmware and the bios rom files. I would assume that this would also work for the LSI/Broadcom firmware for the 9300-8i series, which use the same 3008 raid on chip (roc), but this I cannot confirm.
 - Take note of the SAS Adress of you controller. It can be found on as sticker on the board. You'll need it later.
 - Patience
 
@@ -46,7 +46,7 @@ Much of what I did was based on information I scavanged from other people's expe
 
 ## The Process
 1. Boot into DOS. Make sure the megarec files are on the usb drive, including the `DOS4GW.EXE`
-2. Make sure megarec can see you card. When I ran this, it was listed as "3108." To be honest, I don't know if that number is related to the SAS ROC number (3008), but I said, "Close enough" and moved on.
+2. Make sure `megarec.exe` can see you card. When I ran this, it was listed as "3108." To be honest, I don't know if that number is related to the SAS ROC number (3008), but I said, "close enough" and moved on.
    ```
    megarec -adplist
    ```
@@ -71,9 +71,11 @@ Much of what I did was based on information I scavanged from other people's expe
     ```
     sas3flash.efi -o -e 6
     ```
+10.
+
 ** Note **  if you need to flash to another firmware, you're on your own with that. Good luck. But the steps would look like:
 
-10.  ```
+      ```
        sas3flash.efi -f 3008MCTP.fw # update the firmware
        sas3flash.efi -b mptsas3.rom # update the BIOS
        sas3flash.efi -b mpt3x64.rom # continue to update the BIOS
@@ -91,9 +93,11 @@ Much of what I did was based on information I scavanged from other people's expe
 ## References
 
 Megarec download from HPE (valid Nov. 2024)
+
    https://support.hpe.com/connect/s/softwaredetails?language=en_US&collectionId=MTX-63f4ca46c9424e7d&tab=releaseNotes
    
 Information on flashing another IBM controller
+
    http://www.penlug.org/FreeNasHardwareInfoIbmM1015.html
    https://forums.freebsd.org/threads/flashing-my-m1015.52387/
    https://www.truenas.com/community/threads/where-is-the-megarec-utility-to-crossflash-m1015-to-it-mode.25130/
@@ -101,16 +105,20 @@ Information on flashing another IBM controller
    https://www.servethehome.com/flash-lsi-sas-3008-hba-e-g-ibm-m1215-mode/
    
 Megarec Command Usage
+
    https://forums.servethehome.com/index.php?threads/lsi-megacli-preboot-cli-storecli-megascu-megarec-sas2flash-and-megaoem-commands.457/
 
 Another user's experience flashing back to IR mode
+
    https://forums.serverbuilds.net/t/flashing-sas2208-to-it-mode-when-sas2flsh-does-not-detect-it/2357
 
 Thorough Flashing Guide(s) for LSI Variants
+
    https://www.truenas.com/community/resources/detailed-newcomers-guide-to-crossflashing-lsi-9211-9300-9305-9311-9400-94xx-hba-and-variants.54/
    https://geeksunlimitedinc.wordpress.com/2017/02/16/flashing-lsi-hba-to-it-mode-or-ir-mode/
    https://github.com/EverLand1/9300-8i_IT-Mode
    https://github.com/lrq3000/lsi_sas_hba_crossflash_guide?tab=readme-ov-file
 
 LSI Raid Controller Listing and OEM Equivalents
+
    https://forums.servethehome.com/index.php?threads/lsi-raid-controller-and-hba-complete-listing-plus-oem-models.599/
