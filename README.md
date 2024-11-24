@@ -46,7 +46,7 @@ Much of what I did was based on information I scavanged from other people's expe
 
 ## The Process
 1. Boot into DOS. Make sure the megarec files are on the usb drive, including the `DOS4GW.EXE`
-2. Make sure megarec can see you card.
+2. Make sure megarec can see you card. When I ran this, it was listed as "3108." To be honest, I don't know if that number is related to the SAS ROC number (3008), but I said, "Close enough" and moved on.
    ```
    megarec -adplist
    ```
