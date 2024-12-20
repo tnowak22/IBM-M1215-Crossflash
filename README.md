@@ -52,10 +52,10 @@ Much of what I did was based on information I scavanged from other people's expe
    ```
 3. Run the following commands with megarec. These will backup the current configuration, I think, which you can restore if needed. Now, the second command errored out on me. I ignored it and moved on.
    ```
-    megarec -readsbr origsbr.bin
+    megarec -readsbr 0 origsbr.bin
    ```
    ```
-   megarec -readspd origspd.bin
+   megarec -readspd 0 origspd.bin
    ```
 4. Now we clear the current configuration.
    ```
