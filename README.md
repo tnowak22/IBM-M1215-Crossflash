@@ -26,12 +26,25 @@ First we need a DOS usb drive and an EFI usb drive. The process of making them i
 4. `START`
 
 `EFI `
+
+There are two options here, depending on if you are using UEFI bios or Legacy boot.
+
+**For legacy boot:**
+
 1. Open Rufus
 2. Set `Boot Selection` to Non bootable
 3. `START`
 4. Download `/EFI/boot/BOOTX64.efi` (No idea where I got it from.)
 5. Copy the entire directory structure to the drive. Done.
 
+**For UEFI boot:**
+1. Open Rufus
+2. Set `Boot Selection` to UEFI:NTFS
+3. Partition scheme: GPT
+4. Leave the rest default
+5. `START`
+6. Download `/EFI/boot/BOOTX64.efi` (No idea where I got it from.)
+7. Copy the entire directory structure to the drive. Done.
 ## Prerequisites
 
 - megarec and the other file in that folder
