@@ -80,7 +80,7 @@ Much of what I did was based on information I scavanged from other people's expe
 5. Thats it, shut-er down.
 6. Boot into EFI. Include the firmware/ bios files on the same usb drive.
 7. `sas3flash.exe -list` should show the SAS3008 controller.
-8. Clear the current firmware
+8. Clear the current firmware (optional). This is what we did with _megarec_. It won't hurt to run this, but it probably won't do anything meaningful.
     ```
     sas3flash.efi -o -e 6
     ```
@@ -101,6 +101,13 @@ Much of what I did was based on information I scavanged from other people's expe
     sas3flash.efi -listall
     ```
 12. Congrats, you're done. `reset -s` to shutdown from the EFI shell.
+
+## Result
+Swapping the raid cards was relatively painless (but stressful). Upon restarting the machine with the new raid controller, the drives were present in an "inactive" state. I had to enter the Avago configuration utility to activate the raid volumes. The machine rebooted as normal. 
+
+The machine on which this was done is running Window Server Essentials 2019. On it, MegaRaid Storage Manager is installed. I was able to verify that the virtual groups, logical volumes, and drives were present as they were with the previous raid controller. 
+
+At this point, one could assume the process was a success. However, that will remain to be seen with time.
 
 ## References
 
