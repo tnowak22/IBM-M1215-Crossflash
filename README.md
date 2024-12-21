@@ -84,7 +84,7 @@ Much of what I did was based on information I scavanged from other people's expe
     ```
     sas3flash.efi -o -e 6
     ```
-9. Flashing the firmware.
+9. Flashing the firmware. In this step, we update the BIOS twice to add support for both UEFI and Legacy bios versions.
 
    ** Note **  if you need to flash to another firmware, you're on your own. Good luck. But the steps would look like:
       ```
